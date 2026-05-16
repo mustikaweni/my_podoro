@@ -14,8 +14,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
-    url: 'https://qvksmfkplqbezzwmrbvs.supabase.co',
-    anonKey: 'sb_publishable_Clpso-EXfTVVXraCRXfdkg_4n7jlfbc',
+    url: 'https://vxmkssdgpgtaujfllbce.supabase.co',
+    anonKey: 'sb_publishable_NEvvWO9tVeIpxdUl2_wl0w_H2QhRd2U',
   );
 
   runApp(const ProviderScope(child: MyPodoroApp()));
