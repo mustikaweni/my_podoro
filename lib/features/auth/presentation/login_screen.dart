@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../timer/presentation/home_screen.dart';
+import 'forgot_password_screen.dart';
 import 'signup_screen.dart';
 import '../providers/auth_provider.dart';
 
@@ -158,8 +159,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         // Password Field
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text(
+                          children: [
+                            const Text(
                               'Password',
                               style: TextStyle(
                                 color: Color(0xFF14142B),
@@ -167,12 +168,22 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                                 fontWeight: FontWeight.w800,
                               ),
                             ),
-                            Text(
-                              'Forgot?',
-                              style: TextStyle(
-                                color: Color(0xFFB82315),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w800,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const ForgotPasswordScreen(),
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Forgot?',
+                                style: TextStyle(
+                                  color: Color(0xFFB82315),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w800,
+                                ),
                               ),
                             ),
                           ],

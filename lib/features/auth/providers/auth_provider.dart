@@ -65,6 +65,14 @@ class AuthNotifier extends StateNotifier<AsyncValue<User?>> {
     }
   }
 
+  Future<void> resetPassword(String email) async {
+    try {
+      await _supabase.auth.resetPasswordForEmail(email);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   void refreshUser() {
     final user = _supabase.auth.currentUser;
     state = AsyncValue.data(user);
