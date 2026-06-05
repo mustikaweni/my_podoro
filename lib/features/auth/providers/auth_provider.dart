@@ -67,7 +67,10 @@ class AuthNotifier extends StateNotifier<AsyncValue<User?>> {
 
   Future<void> resetPassword(String email) async {
     try {
-      await _supabase.auth.resetPasswordForEmail(email);
+      await _supabase.auth.resetPasswordForEmail(
+        email,
+        redirectTo: 'mypodoro://login-callback',
+      );
     } catch (e) {
       rethrow;
     }
